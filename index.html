@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Nature Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .fact {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Nature Facts</h1>
+        <div id="fact" class="fact"></div>
+        <button id="newFactButton">Get a New Fact</button>
+    </div>
+    <script>
+        const facts = [
+            {
+                title: "Biodiversity",
+                description: "Earth is home to an estimated 8.7 million species of plants and animals, with about 80% of them still undiscovered. This biodiversity is crucial for ecosystem stability and resilience."
+            },
+            {
+                title: "Photosynthesis",
+                description: "Plants convert sunlight into energy through a process called photosynthesis, which not only provides food for the plants themselves but also produces oxygen as a byproduct, essential for most life forms on Earth."
+            },
+            {
+                title: "Water Cycle",
+                description: "The water cycle is a continuous process where water evaporates from the Earth's surface, condenses in the atmosphere, and falls back to the surface as precipitation. This cycle is vital for replenishing freshwater resources."
+            },
+            {
+                title: "Climate Zones",
+                description: "The Earth has various climate zones, including tropical, temperate, and polar regions. Each zone supports different ecosystems and wildlife, influencing the types of plants and animals that can thrive there."
+            },
+            {
+                title: "Natural Selection",
+                description: "Charles Darwin's theory of natural selection explains how species evolve over time through the survival and reproduction of individuals best suited to their environment. This process leads to adaptation and the emergence of new species."
+            }
+        ];
+
+        document.getElementById('newFactButton').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const fact = facts[randomIndex];
+            document.getElementById('fact').innerHTML = `<strong>${fact.title}</strong>: ${fact.description}`;
+        });
+    </script>
+</body>
+</html>
